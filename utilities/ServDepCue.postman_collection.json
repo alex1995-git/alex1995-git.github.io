@@ -1,0 +1,817 @@
+{
+	"info": {
+		"_postman_id": "e337384b-1be4-4b3c-9670-06b3adff9471",
+		"name": "ServDepCue",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n  \"username\": \"admin\",\r\n\r\n  \"password\": \"DCadmin*\",\r\n\r\n  \"role\": \"ADMIN\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY2ODczMzU0MCwiaWF0IjoxNjY4NzE5MTQwfQ.5NuwNtSQSezDBNx0WmUTKfCRQ3IwuXm-yrmoyM2C-K_8B4ngf17qxhBp_xdToBIOoW8dIIzaYIFxnvMp10cgqQ",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cedula\": \"0106850076\",\r\n  \"nombres\": \"Prueba\",\r\n  \"fechaNacimiento\": \"2022-11-17\",\r\n  \"correo\": \"fnewnfjfne@frefrefe.com\",\r\n  \"telefono\": \"string\",\r\n  \"direccion\": \"string\",\r\n  \"ccliente\": 0,\r\n  \"fechaDesde\": \"2022-11-17\",\r\n  \"fechaHasta\": \"2022-11-17\",\r\n  \"estado\": \"A\",\r\n  \"observacion\": \"prueba\",\r\n  \"error\": true,\r\n  \"mensaje\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clients/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clients",
+								"save"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY2ODczMzU0MCwiaWF0IjoxNjY4NzE5MTQwfQ.5NuwNtSQSezDBNx0WmUTKfCRQ3IwuXm-yrmoyM2C-K_8B4ngf17qxhBp_xdToBIOoW8dIIzaYIFxnvMp10cgqQ",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cedula\": \"0106850076\",\r\n  \"nombres\": \"Prueba\",\r\n  \"fechaNacimiento\": \"2022-11-17T21:04:16.472Z\",\r\n  \"correo\": \"fnewnfjfne@frefrefe.com\",\r\n  \"telefono\": \"string\",\r\n  \"direccion\": \"string\",\r\n  \"ccliente\": 0,\r\n  \"fechaDesde\": \"2022-11-17T21:04:16.472Z\",\r\n  \"fechaHasta\": \"2022-11-17T21:04:16.472Z\",\r\n  \"estado\": \"string\",\r\n  \"observacion\": \"update\",\r\n  \"error\": true,\r\n  \"mensaje\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clients/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clients",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancel",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY2ODczMzU0MCwiaWF0IjoxNjY4NzE5MTQwfQ.5NuwNtSQSezDBNx0WmUTKfCRQ3IwuXm-yrmoyM2C-K_8B4ngf17qxhBp_xdToBIOoW8dIIzaYIFxnvMp10cgqQ",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clients/cancel?ccliente=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clients",
+								"cancel"
+							],
+							"query": [
+								{
+									"key": "ccliente",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "active",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY2ODczMzU0MCwiaWF0IjoxNjY4NzE5MTQwfQ.5NuwNtSQSezDBNx0WmUTKfCRQ3IwuXm-yrmoyM2C-K_8B4ngf17qxhBp_xdToBIOoW8dIIzaYIFxnvMp10cgqQ",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cedula\": \"0106850076\",\r\n  \"nombres\": \"Prueba\",\r\n  \"fechaNacimiento\": \"2022-11-17T21:04:16.472Z\",\r\n  \"correo\": \"fnewnfjfne@frefrefe.com\",\r\n  \"telefono\": \"string\",\r\n  \"direccion\": \"string\",\r\n  \"ccliente\": 0,\r\n  \"fechaDesde\": \"2022-11-17T21:04:16.472Z\",\r\n  \"fechaHasta\": \"2022-11-17T21:04:16.472Z\",\r\n  \"estado\": \"string\",\r\n  \"observacion\": \"string\",\r\n  \"error\": true,\r\n  \"mensaje\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clients/active?ccliente=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clients",
+								"active"
+							],
+							"query": [
+								{
+									"key": "ccliente",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clients",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/clients/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clients",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actives",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"csuscripcion\": 0,\r\n  \"valor\": 10,\r\n  \"cantidad\": 2,\r\n  \"ccliente\": {\r\n    \"ccliente\": 1\r\n  },\r\n  \"fechaDesde\": \"2022-11-18T21:56:20.258Z\",\r\n  \"fechaHasta\": \"2022-11-18T21:56:20.258Z\",\r\n  \"estado\": \"A\",\r\n  \"listAbonos\": [\r\n    {\r\n      \"codigoAbono\": \"GSA-0001-70181742451\",\r\n      \"asiento\": 1,\r\n      \"cqrcode\": 2,\r\n      \"valorAbono\": 5,\r\n      \"observacion\": \"abono1\",\r\n      \"qrAutomatico\": false\r\n    },\r\n\t{\r\n      \"codigoAbono\": \"\",\r\n      \"asiento\": 2,\r\n      \"cqrcode\": 0,\r\n      \"valorAbono\": 5,\r\n      \"observacion\": \"abono2\",\r\n      \"qrAutomatico\": true\r\n    }\r\n  ],\r\n  \"error\": true,\r\n  \"mensaje\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/suscripcion/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"suscripcion",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "byId",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"user1\",\n    \"password\":\"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clients/byid?ccliente=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clients",
+								"byid"
+							],
+							"query": [
+								{
+									"key": "ccliente",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bycedula",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clients/bycedula?cedula=0106850076&estado=A",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clients",
+								"bycedula"
+							],
+							"query": [
+								{
+									"key": "cedula",
+									"value": "0106850076"
+								},
+								{
+									"key": "estado",
+									"value": "A"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Suscripcion",
+			"item": [
+				{
+					"name": "save",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY2ODczMzU0MCwiaWF0IjoxNjY4NzE5MTQwfQ.5NuwNtSQSezDBNx0WmUTKfCRQ3IwuXm-yrmoyM2C-K_8B4ngf17qxhBp_xdToBIOoW8dIIzaYIFxnvMp10cgqQ",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cedula\": \"0106850076\",\r\n  \"nombres\": \"Prueba\",\r\n  \"fechaNacimiento\": \"2022-11-17\",\r\n  \"correo\": \"fnewnfjfne@frefrefe.com\",\r\n  \"telefono\": \"string\",\r\n  \"direccion\": \"string\",\r\n  \"ccliente\": 0,\r\n  \"fechaDesde\": \"2022-11-17\",\r\n  \"fechaHasta\": \"2022-11-17\",\r\n  \"estado\": \"A\",\r\n  \"observacion\": \"prueba\",\r\n  \"error\": true,\r\n  \"mensaje\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clients/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clients",
+								"save"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY2ODczMzU0MCwiaWF0IjoxNjY4NzE5MTQwfQ.5NuwNtSQSezDBNx0WmUTKfCRQ3IwuXm-yrmoyM2C-K_8B4ngf17qxhBp_xdToBIOoW8dIIzaYIFxnvMp10cgqQ",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cedula\": \"0106850076\",\r\n  \"nombres\": \"Prueba\",\r\n  \"fechaNacimiento\": \"2022-11-17T21:04:16.472Z\",\r\n  \"correo\": \"fnewnfjfne@frefrefe.com\",\r\n  \"telefono\": \"string\",\r\n  \"direccion\": \"string\",\r\n  \"ccliente\": 0,\r\n  \"fechaDesde\": \"2022-11-17T21:04:16.472Z\",\r\n  \"fechaHasta\": \"2022-11-17T21:04:16.472Z\",\r\n  \"estado\": \"string\",\r\n  \"observacion\": \"string\",\r\n  \"error\": true,\r\n  \"mensaje\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clients/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clients",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancel",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY2ODczMzU0MCwiaWF0IjoxNjY4NzE5MTQwfQ.5NuwNtSQSezDBNx0WmUTKfCRQ3IwuXm-yrmoyM2C-K_8B4ngf17qxhBp_xdToBIOoW8dIIzaYIFxnvMp10cgqQ",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cedula\": \"0106850076\",\r\n  \"nombres\": \"Prueba\",\r\n  \"fechaNacimiento\": \"2022-11-17T21:04:16.472Z\",\r\n  \"correo\": \"fnewnfjfne@frefrefe.com\",\r\n  \"telefono\": \"string\",\r\n  \"direccion\": \"string\",\r\n  \"ccliente\": 0,\r\n  \"fechaDesde\": \"2022-11-17T21:04:16.472Z\",\r\n  \"fechaHasta\": \"2022-11-17T21:04:16.472Z\",\r\n  \"estado\": \"string\",\r\n  \"observacion\": \"string\",\r\n  \"error\": true,\r\n  \"mensaje\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clients/cancel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clients",
+								"cancel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "active",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY2ODczMzU0MCwiaWF0IjoxNjY4NzE5MTQwfQ.5NuwNtSQSezDBNx0WmUTKfCRQ3IwuXm-yrmoyM2C-K_8B4ngf17qxhBp_xdToBIOoW8dIIzaYIFxnvMp10cgqQ",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cedula\": \"0106850076\",\r\n  \"nombres\": \"Prueba\",\r\n  \"fechaNacimiento\": \"2022-11-17T21:04:16.472Z\",\r\n  \"correo\": \"fnewnfjfne@frefrefe.com\",\r\n  \"telefono\": \"string\",\r\n  \"direccion\": \"string\",\r\n  \"ccliente\": 0,\r\n  \"fechaDesde\": \"2022-11-17T21:04:16.472Z\",\r\n  \"fechaHasta\": \"2022-11-17T21:04:16.472Z\",\r\n  \"estado\": \"string\",\r\n  \"observacion\": \"string\",\r\n  \"error\": true,\r\n  \"mensaje\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clients/cancel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clients",
+								"cancel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/suscripcion/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"suscripcion",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actives",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/suscripcion/actives",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"suscripcion",
+								"actives"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "byId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/suscripcion/byid?csuscripcion=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"suscripcion",
+								"byid"
+							],
+							"query": [
+								{
+									"key": "csuscripcion",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "byccliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/suscripcion/byclient?cclient=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"suscripcion",
+								"byclient"
+							],
+							"query": [
+								{
+									"key": "cclient",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "abonos",
+			"item": [
+				{
+					"name": "save",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY2ODczMzU0MCwiaWF0IjoxNjY4NzE5MTQwfQ.5NuwNtSQSezDBNx0WmUTKfCRQ3IwuXm-yrmoyM2C-K_8B4ngf17qxhBp_xdToBIOoW8dIIzaYIFxnvMp10cgqQ",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cedula\": \"0106850076\",\r\n  \"nombres\": \"Prueba\",\r\n  \"fechaNacimiento\": \"2022-11-17\",\r\n  \"correo\": \"fnewnfjfne@frefrefe.com\",\r\n  \"telefono\": \"string\",\r\n  \"direccion\": \"string\",\r\n  \"ccliente\": 0,\r\n  \"fechaDesde\": \"2022-11-17\",\r\n  \"fechaHasta\": \"2022-11-17\",\r\n  \"estado\": \"A\",\r\n  \"observacion\": \"prueba\",\r\n  \"error\": true,\r\n  \"mensaje\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clients/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clients",
+								"save"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY2ODczMzU0MCwiaWF0IjoxNjY4NzE5MTQwfQ.5NuwNtSQSezDBNx0WmUTKfCRQ3IwuXm-yrmoyM2C-K_8B4ngf17qxhBp_xdToBIOoW8dIIzaYIFxnvMp10cgqQ",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cedula\": \"0106850076\",\r\n  \"nombres\": \"Prueba\",\r\n  \"fechaNacimiento\": \"2022-11-17T21:04:16.472Z\",\r\n  \"correo\": \"fnewnfjfne@frefrefe.com\",\r\n  \"telefono\": \"string\",\r\n  \"direccion\": \"string\",\r\n  \"ccliente\": 0,\r\n  \"fechaDesde\": \"2022-11-17T21:04:16.472Z\",\r\n  \"fechaHasta\": \"2022-11-17T21:04:16.472Z\",\r\n  \"estado\": \"string\",\r\n  \"observacion\": \"string\",\r\n  \"error\": true,\r\n  \"mensaje\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clients/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clients",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancel",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY2ODczMzU0MCwiaWF0IjoxNjY4NzE5MTQwfQ.5NuwNtSQSezDBNx0WmUTKfCRQ3IwuXm-yrmoyM2C-K_8B4ngf17qxhBp_xdToBIOoW8dIIzaYIFxnvMp10cgqQ",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cedula\": \"0106850076\",\r\n  \"nombres\": \"Prueba\",\r\n  \"fechaNacimiento\": \"2022-11-17T21:04:16.472Z\",\r\n  \"correo\": \"fnewnfjfne@frefrefe.com\",\r\n  \"telefono\": \"string\",\r\n  \"direccion\": \"string\",\r\n  \"ccliente\": 0,\r\n  \"fechaDesde\": \"2022-11-17T21:04:16.472Z\",\r\n  \"fechaHasta\": \"2022-11-17T21:04:16.472Z\",\r\n  \"estado\": \"string\",\r\n  \"observacion\": \"string\",\r\n  \"error\": true,\r\n  \"mensaje\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clients/cancel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clients",
+								"cancel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "active",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY2ODczMzU0MCwiaWF0IjoxNjY4NzE5MTQwfQ.5NuwNtSQSezDBNx0WmUTKfCRQ3IwuXm-yrmoyM2C-K_8B4ngf17qxhBp_xdToBIOoW8dIIzaYIFxnvMp10cgqQ",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cedula\": \"0106850076\",\r\n  \"nombres\": \"Prueba\",\r\n  \"fechaNacimiento\": \"2022-11-17T21:04:16.472Z\",\r\n  \"correo\": \"fnewnfjfne@frefrefe.com\",\r\n  \"telefono\": \"string\",\r\n  \"direccion\": \"string\",\r\n  \"ccliente\": 0,\r\n  \"fechaDesde\": \"2022-11-17T21:04:16.472Z\",\r\n  \"fechaHasta\": \"2022-11-17T21:04:16.472Z\",\r\n  \"estado\": \"string\",\r\n  \"observacion\": \"string\",\r\n  \"error\": true,\r\n  \"mensaje\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clients/cancel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clients",
+								"cancel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/abonos/activos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"abonos",
+								"activos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actives",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/abonos/activos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"abonos",
+								"activos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bysuscripcion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/abonos/bysuscripcion?csuscripcion=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"abonos",
+								"bysuscripcion"
+							],
+							"query": [
+								{
+									"key": "csuscripcion",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,45 @@
+version: '2'
+
+services:
+  app:
+    image: 'app_depcue_springboot_postgresql-image'
+    container_name: app_depcue_sb_pg-container_name
+    build: 
+      context: .
+    depends_on:
+      - dbpostgresql
+    ports:
+      - 8080:8080
+    volumes:
+      - .KeysSSL:/.KeysSSL
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db_depcue_sb_pg-container_name:5432/dbdepcue
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SPRING_JPA_SHOW_SQL=true
+      - SERVER_PORT=8080
+      - SPRING_DATASOURCE_HOST=localhost
+      - SPRING_DATASOURCE_PORT=5432
+      - SPRING_DATASOURCE_DATABASENAME=dbdepcue
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=DCadmin*
+      - TIME_SCHEDULER=15
+      - MIN_UNLOCK=180
+      - MIN_CADUCATE_TOKEN=100
+      - KEYSSL_ENABLED=false
+      - KEYSSL_PATH=springboot.p12
+      - KEYSSL_STR_PASSWORD=password
+      - KEYSSL_STR_TYPE=pkcs12
+      - KEYSSL_STR_ALIAS=springboot
+      - KEYSSL_PASSWORD=password
+
+      
+      
+  dbpostgresql:
+    image: 'postgres:13.1-alpine'
+    container_name: db_depcue_sb_pg-container_name
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=DCadmin*
+      - POSTGRES_DB=dbdepcue

@@ -1,0 +1,23 @@
+[ req ]
+prompt = no
+default_bits = 4096
+default_md = sha512
+string_mask = utf8only
+distinguished_name = req_distinguished_name
+
+[ req_distinguished_name ]
+countryName                     = EC
+stateOrProvinceName             = Azuay
+localityName                    = Cuenca
+organizationName                = Appware
+organizationalUnitName          = Appware IT Departmento
+commonName                      = DepCue
+
+[ server_cert ]
+basicConstraints = CA:FALSE
+nsCertType = server
+nsComment = "OpenSSL Generated Server Certificate"
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid,issuer:always
+keyUsage = critical, digitalSignature, keyEncipherment
+extendedKeyUsage = serverAuth

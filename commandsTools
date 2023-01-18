@@ -1,0 +1,78 @@
+# Token github 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
+# Token digitalocean 5fff7a037b6f682304c53181def251486535abb23dc9bc14bacaff7a636077b2
+# get images and proces
+docker images
+docker ps -a
+
+# kill all images
+
+for /F %i in ('docker images -a -q') do docker rmi -f %i
+
+docker rmi $(docker images -a -q)
+
+
+# kill all ps
+
+for /F %i in ('docker ps -a -q') do docker rm -f %i
+
+docker rm $(docker ps -a -q)
+
+
+# up images of container
+ docker-compose up --build <service declarate in docker-compose.yml file>
+ docker-compose up -d --build <service declarate in docker-compose.yml file>
+
+#  down images of container
+docker-compose down
+
+# Access docker image
+docker exec -it <id container of ps > bash
+
+docker exec -it <id container of ps > /bin/sh
+
+
+docker build -t depcue .
+
+docker image tag depcue christqnd2409/depcue:latest
+docker image tag depcue:latest registry.digitalocean.com/depcue/imgdepcue:latest
+
+
+docker image push christqnd2409/depcue:latest
+docker image push registry.digitalocean.com/depcue:latest
+docker image push registry.digitalocean.com/depcue/imgdepcue:latest
+
+
+
+
+
+
+
+# Crear key con jks
+# "C:\Program Files\Java\jdk1.8.0_321\bin\keytool.exe" -genkeypair -alias springboot -keyalg RSA -keysize 4096 -storetype JKS -keystore springboot.jks -validity 3650 -storepass password
+# Verificar el contenido de la key jks
+# "C:\Program Files\Java\jdk1.8.0_321\bin\keytool.exe" -list -v -keystore springboot.jks
+
+# Crear key con pkcs12
+# "C:\Program Files\Java\jdk1.8.0_321\bin\keytool.exe" -genkeypair -alias springboot -keyalg RSA -keysize 4096 -storetype PKCS12 -keystore springboot.p12 -validity 3650 -storepass password
+# Verificar el contenido de la key pkcs12
+# "C:\Program Files\Java\jdk1.8.0_321\bin\keytool.exe" -list -v -keystore springboot.p12
+
+
+# Generate cert by clients
+# "C:\Program Files\Java\jdk1.8.0_321\bin\keytool.exe" -export -keystore springboot.p12 -alias springboot -file myCertificate.crt
+
+# Import SSL cert inside JRE keystore (java)
+# "C:\Program Files\Java\jdk1.8.0_321\bin\keytool.exe" -importcert -file myCertificate.crt -alias springboot -keystore $JDK_HOME/jre/lib/security/cacerts
+# "C:\Program Files\Java\jdk1.8.0_321\bin\keytool.exe" -importcert -file myCertificate.crt -alias springboot -keystore "C:\Program Files\Java\jre1.8.0_321\lib\security\cacerts"
+# "C:\Program Files\Java\jdk1.8.0_321\bin\keytool.exe" -importcert -file "C:\Proyect\DepCuencaProjDigOcean\ServicesDeportivoCuenca\myCertificate.crt" -alias springboot -keystore "C:\Program Files\Java\jre1.8.0_321\lib\security\cacerts"
+
+# change PWD ADM postgresql
+
+# sudo -i -u postgres
+# alternative
+# psql -U postgres
+# postgres=# alter user postgres with password 'NEW_PASSWORD';
+# postgresl=# \q
+
+# presenta puertos e ip expuesto
+# sudo ss -plunt

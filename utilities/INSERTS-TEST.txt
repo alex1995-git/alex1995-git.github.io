@@ -1,0 +1,21 @@
+/*ASIENTOS*/
+
+INSERT INTO public.tasiento
+(casiento, estado, localidad, numero, precio, sector, alias, num_asiento)
+VALUES(1, 'A', 'GSA', 'A200', 5.0, 'S', 'GSA', 'A2000');
+INSERT INTO public.tasiento
+(casiento, estado, localidad, numero, precio, sector, alias, num_asiento)
+VALUES(2, 'A', 'GSA', 'B200', 5.0, 'S', 'GSA', 'B2000');
+INSERT INTO public.tasiento
+(casiento, estado, localidad, numero, precio, sector, alias, num_asiento)
+VALUES(3, 'A', 'GSA', 'B201', 5.0, 'S', 'GSA', 'B2001');
+INSERT INTO public.tasiento
+(casiento, estado, localidad, numero, precio, sector, alias, num_asiento)
+VALUES(4, 'A', 'GSA', 'B202', 5.0, 'S', 'GSA', 'B2002');
+
+/*QRCODE*/
+
+INSERT INTO public.tqrcode
+(cqrcode, codigo, estado, fecha_desde, fecha_hasta, cod_loc, serie)
+VALUES(1, 'GSA-001-123456789', 'A', '2022-07-11 00:00:00.000', '2022-07-11 00:00:00.000', 'GSA', '001');
+

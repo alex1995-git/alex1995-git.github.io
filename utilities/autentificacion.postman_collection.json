@@ -1,0 +1,156 @@
+{
+	"info": {
+		"_postman_id": "2f26f709-b558-48f7-b703-a60a2ac9152a",
+		"name": "autentificacion",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://10.1.115.104:8080/authenticate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "TokenDeportivoCuenca",
+						"value": "gfgdfgdgg",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"DCadmin*\",\r\n  \"role\": \"ADMIN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.1.115.104:8080/authenticate",
+					"protocol": "http",
+					"host": [
+						"10",
+						"1",
+						"115",
+						"104"
+					],
+					"port": "8080",
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://10.1.115.104:8080/cargaMasiva/consolidado",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "TokenDeportivoCuenca eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY2ODcyMDE1NSwiaWF0IjoxNjY4NzA1NzU1fQ.6mxX_8i6gXk30Zws_NTSFuhJgqzZHpeg5NdNsFIkL653_abGg51URqEagOXBIcUjhQVNJbE4v6hRBikY1ohF3w",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"contentType": "multipart/form-data",
+							"type": "file",
+							"src": "/D:/USERS/ba0100064l/Downloads/CODIFICACIONABONOS2023_final_final.xlsx"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.1.115.104:8080/cargaMasiva/consolidado",
+					"protocol": "http",
+					"host": [
+						"10",
+						"1",
+						"115",
+						"104"
+					],
+					"port": "8080",
+					"path": [
+						"cargaMasiva",
+						"consolidado"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/cargaMasiva/resultCargaDetalle",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "TokenDeportivoCuenca eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbeyJhdXRob3JpdHkiOiJBRE1JTiJ9XSwiZXhwIjoxNjY5Mjk4MDIyLCJpYXQiOjE2NjkyODM2MjJ9.vgFTWPAghz7yecnks1naYWa3lbCGR6HXfLWFQkQ40wWv_IOb2A_HzH9to1lIwhjUEf0_IDI0zKnOXMATRW5LzA",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "codigoUnico",
+							"value": "cf0aeff6-7d8c-478e-ba05-f74b3f2299b2",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/cargaMasiva/resultCargaDetalle",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cargaMasiva",
+						"resultCargaDetalle"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/cargaMasiva/resultCarga",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "TokenDeportivoCuenca eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbeyJhdXRob3JpdHkiOiJBRE1JTiJ9XSwiZXhwIjoxNjY5Mjk4MDIyLCJpYXQiOjE2NjkyODM2MjJ9.vgFTWPAghz7yecnks1naYWa3lbCGR6HXfLWFQkQ40wWv_IOb2A_HzH9to1lIwhjUEf0_IDI0zKnOXMATRW5LzA",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/cargaMasiva/resultCarga",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cargaMasiva",
+						"resultCarga"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

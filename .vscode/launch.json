@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ClubDepCueApplication<apidepcue>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.depcue.ClubDepCueApplication",
+            "projectName": "apidepcue",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
